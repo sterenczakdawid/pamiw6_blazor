@@ -1,0 +1,77 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\obj\\Debug\\net8.0\\compressed\\hd8gnm84s2.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MoviesPWA.styles.css",
+      "PackagePath": "staticwebassets\\MoviesPWA.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\obj\\Debug\\net8.0\\service-worker-assets.js",
+      "PackagePath": "staticwebassets\\service-worker-assets.js"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\obj\\Debug\\net8.0\\service-worker\\service-worker.published.js",
+      "PackagePath": "staticwebassets\\service-worker.js"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\wwwroot\\icon-512.png",
+      "PackagePath": "staticwebassets\\icon-512.png"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\wwwroot\\manifest.webmanifest",
+      "PackagePath": "staticwebassets\\manifest.webmanifest"
+    },
+    {
+      "Id": "C:\\Users\\Dawid\\Desktop\\c#\\MoviesPWA\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MoviesPWA.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MoviesPWA.props",
+      "PackagePath": "build\\MoviesPWA.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MoviesPWA.props",
+      "PackagePath": "buildMultiTargeting\\MoviesPWA.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MoviesPWA.props",
+      "PackagePath": "buildTransitive\\MoviesPWA.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

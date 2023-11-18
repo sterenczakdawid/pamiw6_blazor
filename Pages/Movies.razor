@@ -1,0 +1,64 @@
+@page "/movies"
+@inject MovieService movieService
+
+<PageTitle>Movies</PageTitle>
+
+<h1>Movies</h1>
+
+@if (movies == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (movies.data == null)
+{
+    <p><em>No data available</em></p>
+}
+else
+{
+  <div class="movie-container">
+    @foreach (var movie in movies.data.Content)
+    {
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">@movie.Title</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">@movie.YearOfRelease</h6>
+          <p class="card-text">@movie.Director.Name @movie.Director.Surname</p>
+          <div style="display: flex; align-items:center; justify-content:space-around;">
+            <button>Edytuj <i class="fa-solid fa-pen-to-square"></i></button>
+            <button class="btn btn-danger">Usuń <i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+@* Paginacja *@
+<div>
+    <p>Page @(movies?.data?.Number + 1) of @(movies?.data?.TotalPages)</p>
+    <button disabled="@movies?.data?.First" @onclick="() => LoadPage(-1)">Previous</button>
+    <button disabled="@movies?.data?.Last" @onclick="() => LoadPage(1)">Next</button>
+</div>
+
+}
+
+@code {
+  private ServiceResponse<Page<Movie>> movies;
+  private int _selected = 0;
+
+  protected override async Task OnInitializedAsync()
+  {
+    movies = await movieService.GetMovies();
+    Console.WriteLine($"Number of movies: {movies?.data?.TotalPages}");
+    Console.WriteLine(movies.data.Content);
+  }
+
+  private async Task LoadPage(int pageNumberIncrement)
+  {
+    // Oblicz nową stronę
+    int newPageNumber = movies.data.Number + pageNumberIncrement;
+
+    // Pobierz filmy dla nowej strony
+    movies = await movieService.GetMovies(newPageNumber, movies.data.Size);
+  }
+}
+
