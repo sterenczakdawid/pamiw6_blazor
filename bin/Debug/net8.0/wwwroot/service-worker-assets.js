@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-qZvB\/zM7BzKqA6iUhge7NZ3OW4+YQ\/S4R1+KJiOSFoY=",
+      "hash": "sha256-3l3K1JJLNk9Q8wOj\/fRLPQ1QIk6uJXu6Qx4pis5NLKA=",
       "url": "css\/app.css"
     },
     {
@@ -41,7 +41,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-3aPTXQjlbpOou4sHQQ6y8fdA0e4sIx0s8NLRXQpoKnY=",
+      "hash": "sha256-pJOgeief6D9EfVWFG1lA4D29S2WqoZZqWerGhCZaGbc=",
       "url": "MoviesPWA.styles.css"
     },
     {
@@ -857,15 +857,15 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-EEhIR93taVYkgq35olWmB9MrPwwdKizjbyV3t\/FGu5s=",
+      "hash": "sha256-bBBhZJ99LAczIIsG0dyQlWUa\/CJsyF2fJqpjrVS0PXk=",
       "url": "_framework\/MoviesPWA.wasm"
     },
     {
-      "hash": "sha256-KNYtC\/4ZpdLDZMd14N6+fK9q74Je\/hmUpXwJ3UY1LF4=",
+      "hash": "sha256-FTFIgcXdSaRUc4g2HTmohEsmNLj8\/iwH3NwMdnXlaU8=",
       "url": "_framework\/MoviesPWA.pdb"
     },
     {
-      "hash": "sha256-NtuRmui\/yeSp23s1pIp5yrnMUcAHP01B\/lDkClIKSBs=",
+      "hash": "sha256-fAg+aimWXd1rm6AxNxWPMsw+ssRvChwEw5vvzrXn0jg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -877,5 +877,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "Xla+jBtJ"
+  "version": "BvfmeG1b"
 };

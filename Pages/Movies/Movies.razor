@@ -1,0 +1,89 @@
+@page "/movies"
+@inject MovieService movieService
+@inject NavigationManager navigationManager
+
+<PageTitle>Movies</PageTitle>
+
+<h1>Movies</h1>
+
+@if (movies == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (movies.data == null)
+{
+    <p><em>No data available</em></p>
+}
+else
+{
+  <div style="display: flex; align-items: center; justify-content:center; flex-direction: column;">
+    <div class="movie-container" style="display: flex; justify-content:center; flex-wrap: wrap;">
+      @foreach (var movie in movies.data.Content)
+      {
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">@movie.Id. @movie.Title</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">@movie.YearOfRelease</h6>
+            <p class="card-text">@movie.Director.Name @movie.Director.Surname</p>
+            <div style="position:relative; display: flex; align-items:center; justify-content:space-around;">
+              <button @onclick="() => EditMovie(movie)">Edytuj <i class="fa-solid fa-pen-to-square"></i></button>
+              <button class="btn btn-danger" @onclick="() => DeleteMovie(movie.Id)">Usuń <i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+@* Paginacja *@
+  <div class="pagination" style="margin: 10px">
+    <button class="page-link" @onclick="() => LoadPage(1)" disabled="@movies?.data?.First">First</button>
+    @for (int i = 0; i < movies.data.TotalPages; i++)
+    {
+      var pageNumber = i + 1;
+      <button class="page-link @(pageNumber == (movies?.data?.Number + 1) ? "current-page" : "")" @onclick="() => LoadPage(pageNumber)" disabled="@((movies?.data?.Number + 1) == pageNumber)">@pageNumber</button>
+    }
+      <button class="page-link" @onclick="() => LoadPage(movies.data.TotalPages)" disabled="@movies?.data?.Last">Last</button>
+  </div>
+</div>
+}
+
+
+<style>
+    .current-page {
+        font-weight: bold;
+    }
+</style>
+
+@code {
+  private ServiceResponse<Page<Movie>> movies;
+
+  private async Task LoadPage(int pageNumber)
+  {
+    movies = await movieService.GetMovies(pageNumber - 1, movies.data.Size);
+  }
+
+  protected override async Task OnInitializedAsync()
+  {
+    movies = await movieService.GetMovies();
+  }
+
+  private async Task DeleteMovie(int id)
+  {
+    var result = await movieService.DeleteMovie(id);
+    if (result.isSuccess)
+    {
+      await LoadPage(1);
+    }
+    else
+    {
+      Console.WriteLine($"Failed to delete movie. {result.message}");
+    }
+  }
+
+  private void EditMovie(Movie movie)
+  {
+    Console.WriteLine($"Edit movie: {movie.Title}");
+    navigationManager.NavigateTo($"/editmovie/{movie.Id}");
+  }
+}
+

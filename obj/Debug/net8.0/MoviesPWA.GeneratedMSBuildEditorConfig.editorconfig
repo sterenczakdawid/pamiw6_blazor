@@ -38,8 +38,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Movies.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzLnJhem9y
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Movies/AddMovie.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzXEFkZE1vdmllLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Movies/EditMovie.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzXEVkaXRNb3ZpZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Movies/Movies.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzXE1vdmllcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Weather.razor]

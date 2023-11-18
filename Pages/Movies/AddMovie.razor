@@ -1,0 +1,81 @@
+@page "/addmovie"
+@inject MovieService movieService
+@inject DirectorService directorService
+@inject NavigationManager navigationManager
+
+<h1>Add Movie</h1>
+@if (directors == null)
+{
+    <p><em>Loading directors...</em></p>
+}
+else if (movie == null)
+{
+    <p><em>Loading movie...</em></p>
+}
+else{
+<p>lalala</p>
+<EditForm Model="movie" OnValidSubmit="HandleValidSubmit">
+  <DataAnnotationsValidator />
+  <div class="form-group">
+    <label for="Title">Title:</label>
+    <InputText id="Title" @bind-Value="movie.Title" class="form-control" />
+    <ValidationMessage For="@(() => movie.Title)" />
+  </div>
+  <div class="form-group">
+    <label for="YearOfRelease">Year of Release:</label>
+    <InputNumber id="YearOfRelease" @bind-Value="movie.YearOfRelease" class="form-control" />
+    <ValidationMessage For="@(() => movie.YearOfRelease)" />
+  </div>
+  <div class="form-group">
+        <label for="directorId">Director</label>
+        <select
+            id="directorId"
+            @bind="movie.Director.Id"
+            class="form-select"
+        >
+            @if (directors != null)
+            {
+                @foreach (var director in directors.data)
+                {
+                    <option value="@director.Id">@(director.Name + " " + director.Surname)</option>
+                }
+            }
+        </select>
+    </div>
+  <button type="submit" class="btn btn-primary" style="margin-top:10px;">Add</button>
+</EditForm>
+
+}
+@code {
+  private Movie movie = new Movie();
+  private ServiceResponse<List<Director>> directors;
+
+  protected override async Task OnInitializedAsync()
+{
+    directors = await directorService.GetDirectors();
+    movie = new Movie();
+
+    if (directors != null && directors.data.Count > 0)
+    {
+        movie.Director = new Director
+        {
+            Id = directors.data[0].Id,
+            Name = directors.data[0].Name,
+            Surname = directors.data[0].Surname
+        };
+    }
+}
+
+  async Task HandleValidSubmit()
+  {
+    var response = await movieService.AddMovie(movie);
+    if (response.isSuccess)
+    {
+      navigationManager.NavigateTo("/movies");
+    }
+    else
+    {
+      Console.WriteLine($"Failed to add movie. {response.message}");
+    }
+  }
+}

@@ -1,0 +1,89 @@
+@page "/editmovie/{movieId:int}"
+@inject MovieService movieService
+@inject DirectorService DirectorService
+@inject NavigationManager NavigationManager
+
+<h1>Edit Movie</h1>
+
+@if (movie == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+  <p>@movie.Title</p>
+    <EditForm Model="movie" OnValidSubmit="HandleValidSubmit">
+      <DataAnnotationsValidator />
+      <div class="form-group">
+        <label for="Title">Title:</label>
+        <InputText id="Title" @bind-Value="movie.Title" class="form-control" />
+        <ValidationMessage For="@(() => movie.Title)" />
+      </div>
+      <div class="form-group">
+        <label for="YearOfRelease">Year of Release:</label>
+        <InputNumber id="YearOfRelease" @bind-Value="movie.YearOfRelease" class="form-control" />
+        <ValidationMessage For="@(() => movie.YearOfRelease)" />
+      </div>
+      <div class="form-group">
+        <label for="directorId">Director</label>
+        <select
+            id="directorId"
+            @bind="movie.Director.Id"
+            class="form-select"
+        >
+            @if (directors != null)
+            {
+                @foreach (var director in directors.data)
+                {
+                    <option value="@director.Id">@(director.Name + " " + director.Surname)</option>
+                }
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top:10px;">Save</button>
+    </EditForm>
+
+}
+
+@code {
+    private Movie movie;
+
+    [Parameter]
+    public int movieId { get; set; }
+
+    private ServiceResponse<List<Director>> directors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        directors = await DirectorService.GetDirectors();
+        var response = await movieService.GetMovieById(movieId);
+        if (response.isSuccess && response.data != null)
+        {
+            movie = new Movie()
+            {
+                Id = response.data.Id,
+                Title = response.data.Title,
+                YearOfRelease = response.data.YearOfRelease,
+                Director = new Director
+                {
+                    Id = response.data.Director?.Id ?? 0,
+                    Name = response.data.Director?.Name,
+                    Surname = response.data.Director?.Surname
+                }
+            };
+        }
+        else
+        {
+            Console.WriteLine(response.message);
+        }
+    }
+
+    async Task HandleValidSubmit()
+    {
+        var response = await movieService.UpdateMovie(movie);
+        if (response.isSuccess)
+            NavigationManager.NavigateTo("/movies");
+        else
+            Console.WriteLine($"Failed to update movie. {response.message}");
+    }
+}

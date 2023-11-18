@@ -1,3 +1,9 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 html,
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -110,8 +116,3 @@ code {
 	color: #c02d76;
 }
 
-.movie-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
