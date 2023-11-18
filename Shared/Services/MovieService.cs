@@ -1,5 +1,4 @@
 using System.Net.Http.Json;
-
 using MoviesPWA.Shared.Models;
 
 namespace MoviesPWA.Shared.Services
@@ -41,6 +40,37 @@ namespace MoviesPWA.Shared.Services
             {
                 Console.WriteLine($"Network error: {ex.Message}");
                 return new ServiceResponse<Page<Movie>>
+                {
+                    isSuccess = false,
+                    message = "Network error"
+                };
+            }
+        }
+
+        public async Task<ServiceResponse<Movie>> DeleteMovie(int id)
+        {
+            try
+            {
+                var response = await _httpClient.DeleteAsync($"{baseApiUrl}/api/v1/movies/delete/{id}");
+                if (!response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine($"HTTP request failed. Status code: {response.StatusCode}");
+                    return new ServiceResponse<Movie>
+                    {
+                        isSuccess = false,
+                        message = "HTTP request failed"
+                    };
+                }
+
+                var json = await response.Content.ReadAsStringAsync();
+                var result = await response.Content.ReadFromJsonAsync<ServiceResponse<Movie>>();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Network error: {ex.Message}");
+                return new ServiceResponse<Movie>
                 {
                     isSuccess = false,
                     message = "Network error"

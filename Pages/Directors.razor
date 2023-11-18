@@ -1,0 +1,75 @@
+@page "/directors"
+@inject DirectorService directorService
+
+<PageTitle>Directors</PageTitle>
+
+<h1>Directors</h1>
+
+@if (directors == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (directors.data == null)
+{
+    <p><em>No data available</em></p>
+}
+else
+{
+  <div class="movie-container">
+    @foreach (var director in directors.data.Content)
+    {
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">@director.Id. @director.Name @director.Surname</h5>
+          <div style="display: flex; align-items:center; justify-content:space-around;">
+            @* <button @onclick="() => EditMovie(movie)">Edytuj <i class="fa-solid fa-pen-to-square"></i></button>
+            <button class="btn btn-danger" @onclick="() => DeleteMovie(movie.Id)">Usuń <i class="fa-solid fa-trash"></i></button> *@
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+@* Paginacja *@
+<div>
+    <p>Page @(directors?.data?.Number + 1) of @(directors?.data?.TotalPages)</p>
+    <button disabled="@directors?.data?.First" @onclick="() => LoadPage(-1)">Previous</button>
+    <button disabled="@directors?.data?.Last" @onclick="() => LoadPage(1)">Next</button>
+</div>
+
+}
+
+@code {
+  private ServiceResponse<Page<Director>> directors;
+  private int _selected = 0;
+
+  private async Task LoadPage(int pageNumberIncrement)
+  {
+    int newPageNumber = directors.data.Number + pageNumberIncrement;
+    directors = await directorService.GetDirectors(newPageNumber, directors.data.Size);
+  }
+
+  protected override async Task OnInitializedAsync()
+  {
+    directors = await directorService.GetDirectors();
+  }
+
+  @* private async Task DeleteMovie(int id)
+  {
+    var result = await movieService.DeleteMovie(id);
+    if (result.isSuccess)
+    {
+      await LoadPage(0);
+    }
+    else
+    {
+      Console.WriteLine($"Failed to delete movie. {result.message}");
+    }
+  }
+
+  private void EditMovie(Movie movie)
+  {
+    Console.WriteLine($"Edit movie: {movie.Title}");
+  } *@
+}
+

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MoviesPWA",
   "resources": {
-    "hash": "sha256-G1jcNKHVYvjVe0GZSBBzMdpKqdj11UCTnAYRWXol6Sw=",
+    "hash": "sha256-PE9xjk2Y6nOrBA+aqyql/rG4gnUqKtSaQ8xydXUiFCA=",
     "jsModuleNative": {
       "dotnet.native.8.0.0.5ccxlixrlk.js": "sha256-LjLDIz9+J7uuiwMlQ4HbNx2BnSpphOtO2MwkoI28vdI="
     },
@@ -211,10 +211,10 @@
       "mscorlib.wasm": "sha256-cDuLeL3OCtVtiid/dyex1MVgbuzDSRwZxKzuP2Dp4mg=",
       "netstandard.wasm": "sha256-A0h86SDieTMoU/wU2JTszWCsUmMuguDcbap0b0BzsmI=",
       "System.Private.CoreLib.wasm": "sha256-/0DNIm/T0C07X7Tuz5uR8JvVCoAfEE2MnfPUSjyS9xc=",
-      "MoviesPWA.wasm": "sha256-zTs1LKlaBBJXfTcmDDClUa2iLNjHvxjDFZ80W0R0wMk="
+      "MoviesPWA.wasm": "sha256-rw+dzoVDI4DhTja2nb1I5bgdH9mmHfTQmG7D4wMfCtk="
     },
     "pdb": {
-      "MoviesPWA.pdb": "sha256-Y3KSPS96XuHAVTaUuLYFjef6+Kzu2Try5sjGnokAy7g="
+      "MoviesPWA.pdb": "sha256-xhFUesJjkml6i+mxZFp/b24cLmKLunViVvvDK2MXkCo="
     }
   },
   "cacheBootResources": true,

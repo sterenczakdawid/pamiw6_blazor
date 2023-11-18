@@ -41,7 +41,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-pmVXrMwQngDdbSnSlrvuHMYhZRuZj5MM1PKGlTYAOa4=",
+      "hash": "sha256-3aPTXQjlbpOou4sHQQ6y8fdA0e4sIx0s8NLRXQpoKnY=",
       "url": "MoviesPWA.styles.css"
     },
     {
@@ -857,15 +857,15 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-06Eeu0F+aoxnzobvfkAeSAl5CMaJovyvy2+Ybb\/lSG8=",
+      "hash": "sha256-EEhIR93taVYkgq35olWmB9MrPwwdKizjbyV3t\/FGu5s=",
       "url": "_framework\/MoviesPWA.wasm"
     },
     {
-      "hash": "sha256-SGdvN3ZiBQ2bWhinJtYbTsdxSJfgkoJWJ64oU0dBkec=",
+      "hash": "sha256-KNYtC\/4ZpdLDZMd14N6+fK9q74Je\/hmUpXwJ3UY1LF4=",
       "url": "_framework\/MoviesPWA.pdb"
     },
     {
-      "hash": "sha256-0FyLSOWY4LYOKu7VnpGZn5s9+j0G8TjWKG9znIoBVNo=",
+      "hash": "sha256-NtuRmui\/yeSp23s1pIp5yrnMUcAHP01B\/lDkClIKSBs=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -877,5 +877,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "m9G5\/psX"
+  "version": "Xla+jBtJ"
 };

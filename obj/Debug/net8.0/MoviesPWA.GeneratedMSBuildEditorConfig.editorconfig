@@ -13,43 +13,47 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = MoviesPWA
 build_property.RootNamespace = MoviesPWA
-build_property.ProjectDir = C:\Users\Dawid\Desktop\c#\MoviesPWA\
+build_property.ProjectDir = c:\Users\Dawid\Desktop\c#\MoviesPWA\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Dawid\Desktop\c#\MoviesPWA
+build_property.MSBuildProjectDirectory = c:\Users\Dawid\Desktop\c#\MoviesPWA
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Dawid/Desktop/c\#/MoviesPWA/App.razor]
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Counter.razor]
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Home.razor]
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Directors.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlyZWN0b3JzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Movies.razor]
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Movies.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Weather.razor]
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dawid/Desktop/c\#/MoviesPWA/_Imports.razor]
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dawid/Desktop/c\#/MoviesPWA/Layout/MainLayout.razor]
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-iyuro5fg8e
 
-[C:/Users/Dawid/Desktop/c\#/MoviesPWA/Layout/NavMenu.razor]
+[c:/Users/Dawid/Desktop/c\#/MoviesPWA/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-39j2voeoaf

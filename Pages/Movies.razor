@@ -20,12 +20,12 @@ else
     {
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">@movie.Title</h5>
+          <h5 class="card-title">@movie.Id. @movie.Title</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">@movie.YearOfRelease</h6>
           <p class="card-text">@movie.Director.Name @movie.Director.Surname</p>
           <div style="display: flex; align-items:center; justify-content:space-around;">
-            <button>Edytuj <i class="fa-solid fa-pen-to-square"></i></button>
-            <button class="btn btn-danger">Usuń <i class="fa-solid fa-trash"></i></button>
+            <button @onclick="() => EditMovie(movie)">Edytuj <i class="fa-solid fa-pen-to-square"></i></button>
+            <button class="btn btn-danger" @onclick="() => DeleteMovie(movie.Id)">Usuń <i class="fa-solid fa-trash"></i></button>
           </div>
         </div>
       </div>
@@ -45,20 +45,33 @@ else
   private ServiceResponse<Page<Movie>> movies;
   private int _selected = 0;
 
+  private async Task LoadPage(int pageNumberIncrement)
+  {
+    int newPageNumber = movies.data.Number + pageNumberIncrement;
+    movies = await movieService.GetMovies(newPageNumber, movies.data.Size);
+  }
+
   protected override async Task OnInitializedAsync()
   {
     movies = await movieService.GetMovies();
-    Console.WriteLine($"Number of movies: {movies?.data?.TotalPages}");
-    Console.WriteLine(movies.data.Content);
   }
 
-  private async Task LoadPage(int pageNumberIncrement)
+  private async Task DeleteMovie(int id)
   {
-    // Oblicz nową stronę
-    int newPageNumber = movies.data.Number + pageNumberIncrement;
+    var result = await movieService.DeleteMovie(id);
+    if (result.isSuccess)
+    {
+      await LoadPage(0);
+    }
+    else
+    {
+      Console.WriteLine($"Failed to delete movie. {result.message}");
+    }
+  }
 
-    // Pobierz filmy dla nowej strony
-    movies = await movieService.GetMovies(newPageNumber, movies.data.Size);
+  private void EditMovie(Movie movie)
+  {
+    Console.WriteLine($"Edit movie: {movie.Title}");
   }
 }
 

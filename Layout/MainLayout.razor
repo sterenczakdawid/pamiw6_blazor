@@ -1,19 +1,8 @@
 ﻿@inherits LayoutComponentBase
 
-@* <MudThemeProvider/>
+<MudThemeProvider/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
-
-@Body
-<hr>
-
-<MudPagination Color="Color.Primary" Count="4" @bind-Selected="@_selected"/>
-
-<MudText Align="Align.Center">Selected page: @_selected</MudText>
-
-@code {
-    private int _selected = 1;
-} *@
 
 <div class="page">
     <div class="sidebar">
