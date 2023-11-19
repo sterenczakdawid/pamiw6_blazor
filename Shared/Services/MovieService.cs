@@ -1,5 +1,7 @@
 using System.Net.Http.Json;
 using System.Text.Json;
+using Microsoft.Extensions.Options;
+using MoviesPWA.Shared.Config;
 using MoviesPWA.Shared.Models;
 
 namespace MoviesPWA.Shared.Services
@@ -8,6 +10,9 @@ namespace MoviesPWA.Shared.Services
     {
         private readonly string baseApiUrl = "http://localhost:8080";
         private readonly HttpClient _httpClient = httpClient;
+        private readonly AppSettings _appSettings;
+
+
         public async Task<ServiceResponse<Page<Movie>>> GetMovies(int pageNumber = 0, int size = 4)
         {
             try

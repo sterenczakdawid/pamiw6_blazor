@@ -1049,3 +1049,4 @@ C:\Users\Dawid\Desktop\c#\MoviesPWA\obj\Debug\net8.0\compressed\h62e87bdib.gz
 C:\Users\Dawid\Desktop\c#\MoviesPWA\obj\Debug\net8.0\compressed\26365cfrw4.gz
 C:\Users\Dawid\Desktop\c#\MoviesPWA\obj\Debug\net8.0\compressed\o6non1xbmw.gz
 C:\Users\Dawid\Desktop\c#\MoviesPWA\obj\Debug\net8.0\MoviesPWA.sourcelink.json
+C:\Users\Dawid\Desktop\c#\MoviesPWA\bin\Debug\net8.0\appsettings.json
